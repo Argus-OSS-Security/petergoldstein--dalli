@@ -3,17 +3,18 @@ name: Fuzzing
 # Fuzzes Dalli's reply parsing with ClusterFuzzLite and Ruzzy. The targets
 # and how to run them locally are in fuzz/. Pull requests that touch the
 # code get a short run against the changed code; the weekly run is longer.
-on:
-  pull_request:
-    paths:
-      - 'lib/**'
-      - 'fuzz/**'
-      - '.clusterfuzzlite/**'
-      - '.github/workflows/fuzzing.yml'
-  schedule:
-    - cron: '0 6 * * 2'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   pull_request:
+#     paths:
+#       - 'lib/**'
+#       - 'fuzz/**'
+#       - '.clusterfuzzlite/**'
+#       - '.github/workflows/fuzzing.yml'
+#   schedule:
+#     - cron: '0 6 * * 2'
+#   workflow_dispatch:
+# 
 permissions: read-all
 
 jobs:

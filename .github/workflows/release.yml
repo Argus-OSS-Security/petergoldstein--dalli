@@ -3,11 +3,12 @@ name: Release
 # `rake release` pushes the version tag as part of publishing the gem, so this
 # fires automatically on release.  It only creates the GitHub Release; the gem
 # itself is still pushed to RubyGems by `rake release`.
-on:
-  push:
-    tags:
-      - 'v*'
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     tags:
+#       - 'v*'
+# 
 permissions:
   contents: read
 

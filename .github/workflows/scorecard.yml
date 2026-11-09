@@ -3,16 +3,17 @@ name: Scorecard
 # OpenSSF Scorecard checks the repository's supply-chain practices (pinned
 # dependencies, token permissions, branch protection and so on). Results go
 # to the Security tab and to the public scorecard.dev API.
-on:
-  push:
-    branches: [ main ]
-  # Rerun when branch protection changes, since it's one of the checks
-  branch_protection_rule:
-  schedule:
-    - cron: '30 4 * * 1'
-  workflow_dispatch:
-
-# publish_results requires read-only permissions at the top level
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [ main ]
+#   # Rerun when branch protection changes, since it's one of the checks
+#   branch_protection_rule:
+#   schedule:
+#     - cron: '30 4 * * 1'
+#   workflow_dispatch:
+# 
+# # publish_results requires read-only permissions at the top level
 permissions: read-all
 
 jobs:

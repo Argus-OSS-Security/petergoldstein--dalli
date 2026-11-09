@@ -3,28 +3,29 @@ name: Devcontainer
 # The devcontainer depends on outside things (Debian mirrors, Docker Hub tags,
 # memcached.org) that can break it without any change here, so it also runs
 # monthly rather than only when its own files change.
-on:
-  push:
-    branches: [main, '*-stable']
-    paths:
-      - '.devcontainer/**'
-      - 'scripts/install_memcached.sh'
-      - 'Gemfile'
-      - 'dalli.gemspec'
-      - '.github/workflows/devcontainer.yml'
-      - '.github/workflows/tests.yml'
-  pull_request:
-    paths:
-      - '.devcontainer/**'
-      - 'scripts/install_memcached.sh'
-      - 'Gemfile'
-      - 'dalli.gemspec'
-      - '.github/workflows/devcontainer.yml'
-      - '.github/workflows/tests.yml'
-  schedule:
-    - cron: '0 6 1 * *'
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [main, '*-stable']
+#     paths:
+#       - '.devcontainer/**'
+#       - 'scripts/install_memcached.sh'
+#       - 'Gemfile'
+#       - 'dalli.gemspec'
+#       - '.github/workflows/devcontainer.yml'
+#       - '.github/workflows/tests.yml'
+#   pull_request:
+#     paths:
+#       - '.devcontainer/**'
+#       - 'scripts/install_memcached.sh'
+#       - 'Gemfile'
+#       - 'dalli.gemspec'
+#       - '.github/workflows/devcontainer.yml'
+#       - '.github/workflows/tests.yml'
+#   schedule:
+#     - cron: '0 6 1 * *'
+#   workflow_dispatch:
+# 
 concurrency:
   group: devcontainer-${{ github.ref }}
   cancel-in-progress: true

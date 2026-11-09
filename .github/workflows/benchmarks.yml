@@ -1,11 +1,12 @@
 name: Benchmarks
 
-on:
-  push:
-    branches: [main]
-  pull_request:
-  workflow_dispatch:
-
+# Triggers intentionally disabled for Argus-OSS-Security.
+# on:
+#   push:
+#     branches: [main]
+#   pull_request:
+#   workflow_dispatch:
+# 
 permissions:
   contents: read
 
